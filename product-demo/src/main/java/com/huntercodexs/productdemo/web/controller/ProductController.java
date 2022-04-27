@@ -1,7 +1,7 @@
 package com.huntercodexs.productdemo.web.controller;
 
 import com.huntercodexs.productdemo.repository.ProductRepository;
-import com.huntercodexs.productdemo.model.ProductModel;
+import com.huntercodexs.productdemo.model.ProductEntity;
 import com.huntercodexs.productdemo.web.exceptions.ProductNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,18 +25,18 @@ public class ProductController {
     Logger log = LoggerFactory.getLogger(this.getClass());
 
     @GetMapping(value = "/products")
-    public ResponseEntity<List<ProductModel>> all(){
+    public ResponseEntity<List<ProductEntity>> all(){
         try {
 
-            List<ProductModel> productModels = productRepository.findAll();
+            List<ProductEntity> productEntities = productRepository.findAll();
 
-            if(productModels.isEmpty()) {
+            if(productEntities.isEmpty()) {
                 throw new ProductNotFoundException("Products not found");
             }
 
             log.info("Products list are been listed");
 
-            return ResponseEntity.ok().body(productModels);
+            return ResponseEntity.ok().body(productEntities);
 
         } catch (ProductNotFoundException pe) {
             throw new ProductNotFoundException("Products not found");
@@ -44,9 +44,9 @@ public class ProductController {
     }
 
     @GetMapping( value = "/products/{id}")
-    public ResponseEntity<Optional<ProductModel>> one(@PathVariable int id) {
+    public ResponseEntity<Optional<ProductEntity>> one(@PathVariable int id) {
 
-        Optional<ProductModel> product = productRepository.findById(id);
+        Optional<ProductEntity> product = productRepository.findById(id);
 
         if(!product.isPresent()) {
             throw new ProductNotFoundException("Product not found");

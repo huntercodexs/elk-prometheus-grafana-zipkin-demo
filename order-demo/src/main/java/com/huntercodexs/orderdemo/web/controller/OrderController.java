@@ -1,6 +1,6 @@
 package com.huntercodexs.orderdemo.web.controller;
 
-import com.huntercodexs.orderdemo.model.OrderModel;
+import com.huntercodexs.orderdemo.model.OrderEntity;
 import com.huntercodexs.orderdemo.repository.OrderRepository;
 import com.huntercodexs.orderdemo.web.exceptions.AddOrderException;
 import com.huntercodexs.orderdemo.web.exceptions.OrderNotFoundException;
@@ -19,30 +19,30 @@ public class OrderController {
     OrderRepository ordersRepository;
 
     @PostMapping (value = "/orders")
-    public ResponseEntity<OrderModel> add(@RequestBody OrderModel order){
+    public ResponseEntity<OrderEntity> add(@RequestBody OrderEntity order){
         try {
-            OrderModel orderModel = ordersRepository.save(order);
-            return ResponseEntity.status(HttpStatus.CREATED).body(orderModel);
+            OrderEntity orderEntity = ordersRepository.save(order);
+            return ResponseEntity.status(HttpStatus.CREATED).body(orderEntity);
         } catch (AddOrderException ae) {
             throw new AddOrderException("Error on try add order");
         }
     }
 
     @GetMapping(value = "/orders/{id}")
-    public Optional<OrderModel> one(@PathVariable int id){
-        Optional<OrderModel> orderModel = ordersRepository.findById(id);
+    public Optional<OrderEntity> one(@PathVariable int id){
+        Optional<OrderEntity> orderModel = ordersRepository.findById(id);
         if(!orderModel.isPresent()) throw new OrderNotFoundException("Order not found");
         return orderModel;
     }
 
     @GetMapping(value = "/orders")
-    public List<OrderModel> all() {
+    public List<OrderEntity> all() {
         return ordersRepository.findAll();
     }
 
     @PutMapping(value = "/orders")
-    public void update(@RequestBody OrderModel orderModel) {
-        ordersRepository.save(orderModel);
+    public void update(@RequestBody OrderEntity orderEntity) {
+        ordersRepository.save(orderEntity);
     }
 
 }
