@@ -1,0 +1,9 @@
+INSERT INTO PRODUCT (ID, TITLE, DESCRIPTION, IMAGE, COST) VALUES (0, 'Product Title 1', 'Product Description 1', 'https://google.images/X8D9AD89AA9O-1', 100.00);
+INSERT INTO PRODUCT (ID, TITLE, DESCRIPTION, IMAGE, COST) VALUES (1, 'Product Title 2', 'Product Description 2', 'https://google.images/X8D9AD89AA9O-2', 200.00);
+INSERT INTO PRODUCT (ID, TITLE, DESCRIPTION, IMAGE, COST) VALUES (2, 'Product Title 3', 'Product Description 3', 'https://google.images/X8D9AD89AA9O-3', 300.00);
+INSERT INTO PRODUCT (ID, TITLE, DESCRIPTION, IMAGE, COST) VALUES (3, 'Product Title 4', 'Product Description 4', 'https://google.images/X8D9AD89AA9O-4', 400.00);
+INSERT INTO PRODUCT (ID, TITLE, DESCRIPTION, IMAGE, COST) VALUES (4, 'Product Title 5', 'Product Description 5', 'https://google.images/X8D9AD89AA9O-5', 500.00);
+INSERT INTO PRODUCT (ID, TITLE, DESCRIPTION, IMAGE, COST) VALUES (5, 'Product Title 6', 'Product Description 6', 'https://google.images/X8D9AD89AA9O-6', 600.00);
+INSERT INTO PRODUCT (ID, TITLE, DESCRIPTION, IMAGE, COST) VALUES (6, 'Product Title 7', 'Product Description 7', 'https://google.images/X8D9AD89AA9O-7', 700.00);
+INSERT INTO PRODUCT (ID, TITLE, DESCRIPTION, IMAGE, COST) VALUES (7, 'Product Title 8', 'Product Description 8', 'https://google.images/X8D9AD89AA9O-8', 800.00);
+INSERT INTO PRODUCT (ID, TITLE, DESCRIPTION, IMAGE, COST) VALUES (8, 'Product Title 9', 'Product Description 9', 'https://google.images/X8D9AD89AA9O-9', 900.00);
