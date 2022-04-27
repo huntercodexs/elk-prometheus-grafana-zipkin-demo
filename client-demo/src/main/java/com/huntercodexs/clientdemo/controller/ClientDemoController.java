@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/client-demo")
+@RequestMapping("${api.prefix}")
 public class ClientDemoController {
 
     @Autowired

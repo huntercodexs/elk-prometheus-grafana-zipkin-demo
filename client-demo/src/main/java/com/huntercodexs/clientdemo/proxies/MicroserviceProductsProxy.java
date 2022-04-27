@@ -12,6 +12,6 @@ import java.util.List;
 public interface MicroserviceProductsProxy {
     @GetMapping(value = "/microservice-product-demo/products")
     List<ProductResponseDTO> findAll();
-    @GetMapping( value = "/microservice-product-demo/products/{id}")
+    @GetMapping(value = "/microservice-product-demo/products/{id}")
     ProductResponseDTO findById(@PathVariable("id") int id);
 }
