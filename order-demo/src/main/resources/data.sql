@@ -1,0 +1,9 @@
+INSERT INTO OrderEntity (id, date, productId, quantity) VALUES (1, '2022/04/01 01:00:00', 11, 10);
+INSERT INTO OrderEntity (id, date, productId, quantity) VALUES (2, '2022/04/01 02:00:00', 12, 20);
+INSERT INTO OrderEntity (id, date, productId, quantity) VALUES (3, '2022/04/01 03:00:00', 13, 30);
+INSERT INTO OrderEntity (id, date, productId, quantity) VALUES (4, '2022/04/01 04:00:00', 14, 40);
+INSERT INTO OrderEntity (id, date, productId, quantity) VALUES (5, '2022/04/01 05:00:00', 15, 50);
+INSERT INTO OrderEntity (id, date, productId, quantity) VALUES (6, '2022/04/01 06:00:00', 16, 60);
+INSERT INTO OrderEntity (id, date, productId, quantity) VALUES (7, '2022/04/01 07:00:00', 17, 70);
+INSERT INTO OrderEntity (id, date, productId, quantity) VALUES (8, '2022/04/01 08:00:00', 18, 80);
+INSERT INTO OrderEntity (id, date, productId, quantity) VALUES (9, '2022/04/01 09:00:00', 19, 90);
