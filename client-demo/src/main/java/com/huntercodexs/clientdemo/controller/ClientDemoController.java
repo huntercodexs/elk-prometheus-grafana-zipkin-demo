@@ -1,5 +1,8 @@
 package com.huntercodexs.clientdemo.controller;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import com.huntercodexs.clientdemo.dto.request.OrderRequestDTO;
 import com.huntercodexs.clientdemo.dto.response.OrderResponseDTO;
 import com.huntercodexs.clientdemo.dto.response.ProductResponseDTO;
@@ -15,6 +18,8 @@ import java.util.List;
 @RequestMapping("${api.prefix}")
 public class ClientDemoController {
 
+    private static final Logger LOG = Logger.getLogger(ClientDemoController.class.getName());
+
     @Autowired
     MicroserviceProductsProxy microserviceProductsProxy;
 
@@ -22,7 +27,10 @@ public class ClientDemoController {
     MicroserviceOrderProxy microserviceOrderProxy;
 
     @GetMapping("/products")
-    public List<ProductResponseDTO> all() { return this.microserviceProductsProxy.findAll(); }
+    public List<ProductResponseDTO> all() {
+        LOG.log(Level.INFO, "Index API is calling");
+        return this.microserviceProductsProxy.findAll();
+    }
 
     @GetMapping("/products/{id}")
     public ProductResponseDTO one(@PathVariable int id){ return microserviceProductsProxy.findById(id); }
