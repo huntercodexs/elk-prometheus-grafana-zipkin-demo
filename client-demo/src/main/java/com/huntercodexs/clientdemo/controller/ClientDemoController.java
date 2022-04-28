@@ -8,7 +8,6 @@ import com.huntercodexs.clientdemo.proxies.MicroserviceProductsProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -17,20 +16,20 @@ import java.util.List;
 public class ClientDemoController {
 
     @Autowired
-    private MicroserviceProductsProxy productsProxy;
+    MicroserviceProductsProxy microserviceProductsProxy;
 
     @Autowired
-    private MicroserviceOrderProxy OrdersProxy;
+    MicroserviceOrderProxy microserviceOrderProxy;
 
     @GetMapping("/products")
-    public List<ProductResponseDTO> all() { return productsProxy.findAll(); }
+    public List<ProductResponseDTO> all() { return this.microserviceProductsProxy.findAll(); }
 
     @GetMapping("/products/{id}")
-    public ProductResponseDTO one(@PathVariable int id){ return productsProxy.findById(id); }
+    public ProductResponseDTO one(@PathVariable int id){ return microserviceProductsProxy.findById(id); }
 
     @PostMapping(value = "/orders")
     public OrderResponseDTO order(@RequestBody OrderRequestDTO orderRequestDTO) {
-        return OrdersProxy.addOrder(orderRequestDTO);
+        return microserviceOrderProxy.addOrder(orderRequestDTO);
     }
 
 }
