@@ -28,7 +28,7 @@ public class ClientDemoController {
 
     @GetMapping("/products")
     public List<ProductResponseDTO> all() {
-        LOG.log(Level.INFO, "Index API is calling");
+        LOG.info("Index Product in API is calling");
         return this.microserviceProductsProxy.findAll();
     }
 
