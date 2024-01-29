@@ -2,6 +2,7 @@ package com.huntercodexs.productdemo.config;
 
 import ch.qos.logback.classic.AsyncAppender;
 import ch.qos.logback.classic.LoggerContext;
+import lombok.extern.slf4j.Slf4j;
 import net.logstash.logback.appender.LogstashTcpSocketAppender;
 import net.logstash.logback.encoder.LogstashEncoder;
 import net.logstash.logback.stacktrace.ShortenedThrowableConverter;
@@ -14,14 +15,14 @@ import org.springframework.context.annotation.Configuration;
 
 import java.net.InetSocketAddress;
 
+@Slf4j
 @Configuration
-@EnableConfigurationProperties
 @RefreshScope
+@EnableConfigurationProperties
 public class LogbackConfiguration {
 
     private static final String LOGSTASH_APPENDER_NAME = "LOGSTASH";
     private static final String ASYNC_LOGSTASH_APPENDER_NAME = "ASYNC_LOGSTASH";
-    private final Logger LOG = LoggerFactory.getLogger(LogbackConfiguration.class);
     private final String appName;
     private final String logstashHost;
     private final Integer logstashPort;
@@ -43,7 +44,7 @@ public class LogbackConfiguration {
 
     private void addLogstashAppender(LoggerContext context) {
 
-        LOG.info("Initializing Logstash logging");
+        log.info("Initializing Logstash logging");
 
         LogstashTcpSocketAppender logstashAppender = new LogstashTcpSocketAppender();
         logstashAppender.setName(LOGSTASH_APPENDER_NAME);

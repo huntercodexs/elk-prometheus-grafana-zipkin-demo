@@ -3,16 +3,14 @@ package com.huntercodexs.zuulserverapigatewaydemo.filters;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 
+@Slf4j
 @Component
 public class LogFilter extends ZuulFilter {
-
-    Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Override
     public String filterType() {
@@ -33,7 +31,7 @@ public class LogFilter extends ZuulFilter {
     public Object run() throws ZuulException {
 
         HttpServletRequest req = RequestContext.getCurrentContext().getRequest();
-        log.info("**** ZUUL Exception : {} " , req.getRequestURL());
+        log.info("**** ZUUL Exception : {} ", req.getRequestURL());
 
         return null;
 

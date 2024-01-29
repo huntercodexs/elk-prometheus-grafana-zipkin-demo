@@ -1,4 +1,4 @@
-package com.huntercodexs.orderdemo.config;
+package com.huntercodexs.eurekaservicediscoverydemo.config;
 
 import brave.sampler.Sampler;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

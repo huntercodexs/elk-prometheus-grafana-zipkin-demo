@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients("com.huntercodexs.clientdemo.proxies")
+@EnableFeignClients("com.huntercodexs.clientdemo")
 public class ClientDemoApplication {
 
     public static void main(String[] args) {
