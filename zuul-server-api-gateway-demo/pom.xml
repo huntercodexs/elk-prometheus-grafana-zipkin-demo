@@ -12,9 +12,9 @@
 
     <packaging>jar</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ZUUL-SERVER-API-GATEWAY-DEMO</name>
-    <artifactId>ZUUL-SERVER-API-GATEWAY-DEMO</artifactId>
-    <description>ZUUL-SERVER-API-GATEWAY-DEMO</description>
+    <name>API-GATEWAY</name>
+    <artifactId>API-GATEWAY</artifactId>
+    <description>API-GATEWAY</description>
     <groupId>com.huntercodexs.zuulserverapigatewaydemo</groupId>
 
     <properties>
